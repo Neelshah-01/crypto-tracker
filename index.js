@@ -7,8 +7,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const statsRoute = require('./routes/stats');
 app.use('/api', statsRoute);
+const deviationRoute = require('./routes/deviation');
+app.use('/api', deviationRoute);
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('Could not connect to MongoDB', err));
