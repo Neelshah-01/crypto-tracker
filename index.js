@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const statsRoute = require('./routes/stats');
+app.use('/api', statsRoute);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
