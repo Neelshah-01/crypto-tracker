@@ -31,7 +31,7 @@ const fetchCryptoData = async () => {
     }
 };
 
-cron.schedule('0 */2 * * *', fetchCryptoData); // Schedule the job to run every 2 hours
+cron.schedule('*/2 * * * *', fetchCryptoData); // Schedule the job to run every 2 hours
 // cron.schedule('* * * * *', fetchCryptoData); // Runs every minute for testing
 // fetchCryptoData(); // Immediate invocation of job once to text if working well
 module.exports = fetchCryptoData;
